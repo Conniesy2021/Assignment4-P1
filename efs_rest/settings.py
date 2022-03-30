@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jga+waopjss*j_%9w-)i$j3n$&e0)qbeo7quiv6g7hq=97^(b0'
+SECRET_KEY = 'w-g)1b5m4qyomhlcc@h2*pdv_3ix3_*ql@8b$xf_!_rn&a7t%n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     'portfolio',
+
 ]
 
 MIDDLEWARE = [
@@ -146,7 +147,7 @@ JWT_AUTH = {
     'JWT_LEEWAY': 0,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=900),
     'JWT_ALLOW_REFRESH': True,
-    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=30),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
 CORS_ORIGIN_WHITELIST = (

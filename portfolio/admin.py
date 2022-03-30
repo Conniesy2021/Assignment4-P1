@@ -25,3 +25,4 @@ class StockList(admin.ModelAdmin):
 admin.site.register(Customer, CustomerList)
 admin.site.register(Investment, InvestmentList)
 admin.site.register(Stock, StockList)
+

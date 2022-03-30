@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-
+# Create your models here.
 class Customer(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=200)
@@ -11,7 +11,6 @@ class Customer(models.Model):
     zipcode = models.CharField(max_length=10)
     email = models.EmailField(max_length=200)
     cell_phone = models.CharField(max_length=50)
-
     created_date = models.DateTimeField(
         default=timezone.now)
     updated_date = models.DateTimeField(auto_now_add=True)
@@ -51,9 +50,6 @@ class Investment(models.Model):
     def results_by_investment(self):
         return self.recent_value - self.acquired_value
 
-    def cust_number(self):
-        return self.customer.cust_number
-
 
 class Stock(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='stocks')
@@ -72,7 +68,3 @@ class Stock(models.Model):
 
     def initial_stock_value(self):
         return self.shares * self.purchase_price
-
-    def cust_number(self):
-        return self.customer.cust_number
-

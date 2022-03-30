@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 # Create your views here.
 from rest_framework import status, generics
 from rest_framework.decorators import api_view
@@ -68,8 +69,6 @@ def investment_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-
 @api_view(['GET', 'PUT', 'DELETE'])
 def getInvestment(request, pk):
     """
@@ -94,7 +93,6 @@ def getInvestment(request, pk):
     elif request.method == 'DELETE':
         investment.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
